@@ -1,33 +1,34 @@
 # UDP Sample Application
 
-|Product|Smart Hub/Smart Tab/Tab8|
+|Product|SmartHub/SmartTab/SmartCam/SmarTab8|
 |-------|------------------------|
 |Project|UDP Sample Application|
 |Project Name|UDP Sample Application|
-|Aim/Objective|To document an Android sample application that how the UDP transmit feature works on Smart Hub, Smart Tab, and Tab8|
+|Aim/Objective|An Android sample application that demostrates how the UDP transmit feature could be implemented on Micronet's computing platforms - SmartHub, SmarTab, SmartCam, and SmarTab8|
 |Current Application Version| v1.0.0|
-|Document Revision Number|01|
-|Document REvision Date| 19 December 2019|
+|Document Revision Number|02|
+|Document Revision Date| 26 December 2019|
 
 ## Document History
 |Document Revision|Written By|Date|Comments|
 |-----------------|----------|----|--------|
 |01|John Ho|19 December 2019|Draft|
+|02|Eemaan Siddiqi|26 December 2019|Minor changes|
 
 ## Preface
 ### Document Purpose
-The purpose of this document is to explain the UDP transmit feature to our customer. ATS system is one of the main service we provide to our customer and the system is working on UDP communication protocol. Therefor, having 
-an application to demonstrate the logic of how UDP transmit is going to work will benefit our customer to better understanding the ATS system, also for future custom modification on the system.
+The purpose of this document is to explain the functionality of the UDP Sample Application and to outline the standard implementation procedures required to establish a UDP communication channel through an AndroidTM application. 
 
 ## Introduction
 ### Background Information
 
-This application demonstrates how to preform UDP transmit on Smart Hub, Smart Tab and Tab 8. User will be able to configure the device to Client or Server, and choose between 2 Parties or 3 Parties communication.
+This application was designed to implement a UDP communication channel for Micronet's computing platforms. The UDP communication channel would allow users to transmit and receive UDP messages from multiple parties. 
+Using the sample application, users could configure the device to act as a Client or a Server. The application also allows users to choose between 2 party or 3 party communication.
 
 |Develop Environment|Android Studio v3.5.3|
 |-------------------|---------------------|
-|Tested Model|Tab8: MsTab8/ SmartHub: TREQr_5/ SmartTab: --|
-|Tested OS|Tab8: msm8953_64_c801-userdebug 9 PKQ1/ SmartHub: TREQr_5_0.1.27.0_20190926.1451/ SmartTab: --|
+|Tested Model|Tab8: MsTab8/ SmartHub: TREQr_5/ SmartTab: MSTab8/ SmartCam: MSCAM|
+|Tested OS|Tab8: msm8953_64_c801-userdebug 9 PKQ1/ SmartHub: TREQr_5_0.1.27.0_20190926.1451/ SmartTab: msm8953_64_c801-userdebug 9 PKQ1 micronet.MSTab8_00.2.7.0_20191119.0959 release-keys/ SmartCam: msm8953_64_c801-userdebug 9 PKQ1 micronet.MSCAM_10.2.7.0_20191118.1459 release-keys|
 |Require Platform Keys and Properties|micronet-tab8-platform.keystore/ obc5_props.keystore/ obc5keys.properties/ tab8platformkey.properties|
 
 
