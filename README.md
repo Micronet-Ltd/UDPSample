@@ -59,14 +59,14 @@ When UDP Cycle is on, Client will continuously sending UDP transmit to Server/ C
 Keep Alive Mechanism is an approach to evaluate and maintain Internet connection of the device once the system starts UDP transmit process.
 
 Example: Server will open another listening port behind the system, it keeps receiving heartbeat UDP packet (1 byte)from client, and send an ack back to the sender.
-If server did not receive any heartbeat packet from client, it will auto increases the Error Count by 1.
-When the number of Error Count reaches the configurable limit (Default set to 10), Server will activate "Internet Connection".
+If server did not receive any heartbeat packet from client, it will automatically increases the Error Count by 1.
+When the number of Error Count reaches the configurable limit (Default set to 10), Server will activate "Internet Re-Connection".
 
 Note: To prevent unwanted Internet Reconnection happens, any successful heartbeat communication cycle occurs during the error counting will reset the number of Error Count to 0.
 
 #### Internet Reconnection
 When the number of Error Count reaches the limit, system will automatically send an command to the device and force it to re-establish Internet connection by turning OFF and ON the network.
-The number of Error Count will be reset to 0.
+The number of Error Count will be reset to 0 after the process.
 
 Note: Changing the Network state of the device requires System Permission. 
 
@@ -88,7 +88,9 @@ Example: csv file named 2017_07_23T16_37_34.csv means the file was created on th
 ### Read Device Hardware and Software Information 
 System will extract device information
 These information included the following:
+
 |OS Version|Current Device version|
+|----------|----------------------|
 |Android Build Version|Current Android OS version|
 |Device Model|Device's production model|
 |Device Name|Device's produce name|
@@ -111,7 +113,6 @@ These information included the following:
 |IMEI|Extract device IMEI number|
 
 
-### And Such :D
 ### Future Feature
 Set up a 3rd-party server (Amazon Cloud, Google Firebase and such) for user to preform UDP transmit and UDP transmit log storage.
 
@@ -160,6 +161,7 @@ Note: After user entered required information, and press Lock Config button. The
 
 #### Preparation
 Before you start, make sure the device that you'd like to setup as a Server is running on the static sim card and having a static IP.
+
 For the Clients, they can be running on any kind of cellula network or connected to the WIFI.
 
 #### Performing 2 Parties Communication
@@ -226,9 +228,10 @@ DatagramSocket: https://developer.android.com/reference/java/net/DatagramSocket
 
 DatagramPacket: https://developer.android.com/reference/java/net/DatagramPacket
 
-The benefit of using DatagramSocket and DatagramPocket in UDP transmit is target address traceable. Since, unlike TCP, UDP communication protocol will not guarantee the packet delivery, 
+The benefit of using DatagramSocket and DatagramPacket in UDP transmit is to make the target address traceable. Since, unlike TCP, UDP communication protocol will not guarantee the packet delivery, 
 there will be no solid communication channel created if two end points are performing UDP transmit. This problem is quite obvious especially when devices are using dynamic network connection, such as mobile network.
-DatagramSocket and DatagramPacket will be able to make down the network information of the device and those info will be packed and send with the UDP packet. 
+
+DatagramSocket and DatagramPacket will be able to mark down the network information of the device and those info will be packed and send with the UDP packet. 
 User can decode the received UDP packet, extract those information and locate the sender network address.
 
 Note: Thanks to the limitation of IPv4 and complexity of NAT, the network information you received from a UDP packet could be expired pretty soon.
