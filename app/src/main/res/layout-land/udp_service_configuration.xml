@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fadeScrollbars="false"
+        android:scrollbarSize="5dp"
+        android:scrollbarThumbVertical="@color/micronetGreen">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="4"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView46"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/config_f_communication_type"
+                    android:textAlignment="textStart"
+                    android:textSize="13sp"
+                    android:layout_marginTop="17dp"
+                    android:layout_weight="2"
+                    android:layout_marginStart="10dp"
+                    android:textStyle="bold"/>
+                <RadioGroup
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:id="@+id/radioGroupConfigCommunicationType"
+                    android:layout_weight="2"
+                    android:layout_marginTop="10dp"
+                    android:weightSum="2">
+
+                    <RadioButton
+                        android:id="@+id/radioButton2Parties"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/config_f_2_parties"
+                        android:checked="true"
+                        android:layout_weight="1"/>
+
+                    <RadioButton
+                        android:id="@+id/radioButton3Parties"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/config_f_3_parties"
+                        android:layout_weight="1"/>
+                </RadioGroup>
+
+
+            </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="4"
+        android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/textView2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/config_f_select"
+            android:textAlignment="textStart"
+            android:textSize="13sp"
+            android:layout_marginTop="17dp"
+            android:layout_weight="2"
+            android:layout_marginStart="10dp"
+            android:textStyle="bold"/>
+        <RadioGroup
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/radioGroupConfig"
+            android:layout_weight="2"
+            android:layout_marginTop="10dp"
+            android:weightSum="2">
+
+            <RadioButton
+                android:id="@+id/radioButtonClient"
+                android:layout_width="0dp"
+        android:layout_height="wrap_content"
+                android:text="@string/config_f_rbutton_client"
+                android:checked="true"
+                android:layout_weight="1"/>
+
+            <RadioButton
+                android:id="@+id/radioButtonServer"
+                android:layout_width="0dp"
+        android:layout_height="wrap_content"
+                android:text="@string/config_f_rbutton_server"
+                android:layout_weight="1"/>
+        </RadioGroup>
+
+
+    </LinearLayout>
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="5">
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/config_f_device_ip"
+            android:textStyle="bold"
+            android:layout_weight="2"
+            android:layout_marginStart="10dp"/>
+
+        <TextView
+            android:id="@+id/textViewDeviceIP"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/config_f_unknown"
+            android:gravity="center"
+            android:layout_weight="3"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:weightSum="2"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/config_f_target_ip"
+                android:textStyle="bold"
+                android:layout_weight="1"/>
+
+            <EditText
+                android:id="@+id/editTextTargetIP"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:hint="@string/config_f_unknown"
+                android:textSize="12sp"
+                android:layout_weight="1"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:weightSum="2">
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/config_f_target_port"
+                android:textStyle="bold"
+                android:layout_weight="1"/>
+
+            <EditText
+                android:id="@+id/editTextTargetPort"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:hint="@string/config_f_unknown"
+                android:textSize="12sp"
+                android:layout_weight="1"/>
+        </LinearLayout>
+
+        <!--<LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:weightSum="2">
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/config_f_message"
+                android:textStyle="bold"
+                android:layout_weight="1"/>
+
+            <EditText
+                android:id="@+id/editTextMessage"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:hint="@string/config_f_unknown"
+                android:textSize="12sp"
+                android:layout_weight="1"/>
+        </LinearLayout>-->
+
+
+
+
+
+
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp">
+
+        <Button
+            android:id="@+id/btnLockConfig"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:text="@string/config_f_btn_lock_config"
+            android:layout_marginStart="20dp"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            />
+
+        <Button
+            android:id="@+id/btnResetConfig"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:text="@string/config_f_btn_reset_config"
+            android:layout_marginEnd="20dp"
+            android:textSize="10sp"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/config_f_network_status"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:layout_marginTop="10dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:weightSum="10">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="5"
+            android:layout_marginEnd="10dp">
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/config_f_nw_sim_state"
+                android:layout_marginTop="15dp"
+                android:textSize="15sp"
+                android:gravity="right"/>
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/config_f_new_single_strength"
+                android:layout_marginTop="15dp"
+                android:textSize="15sp"
+                android:gravity="right" />
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/config_f_nw_internet_state"
+                android:layout_marginTop="15dp"
+                android:textSize="15sp"
+                android:gravity="right" />
+            <TextView
+                android:id="@+id/textView15"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Phone Number:"
+                android:layout_marginTop="15dp"
+                android:textSize="15sp"
+                android:gravity="right" />
+            <TextView
+                android:id="@+id/textView35"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="IMEI Number:"
+                android:layout_marginTop="15dp"
+                android:textSize="15sp"
+                android:gravity="right" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="5"
+            android:layout_marginStart="10dp">
+
+            <TextView
+                android:id="@+id/textViewSimState"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/config_f_unknown"
+                android:layout_marginTop="15dp"
+                android:textSize="15sp"
+                android:gravity="left" />
+
+            <TextView
+                android:id="@+id/textViewSingle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/config_f_unknown"
+                android:layout_marginTop="15dp"
+                android:textSize="15sp"
+                android:gravity="left" />
+            <TextView
+                android:id="@+id/textViewInternetState"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/config_f_unknown"
+                android:layout_marginTop="15dp"
+                android:textSize="15sp"
+                android:gravity="left" />
+            <TextView
+                android:id="@+id/textViewPhoneNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/config_f_unknown"
+                android:layout_marginTop="15dp"
+                android:textSize="15sp"
+                android:gravity="left" />
+            <TextView
+                android:id="@+id/textViewIMEINumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/config_f_unknown"
+                android:layout_marginTop="15dp"
+                android:textSize="15sp"
+                android:gravity="left" />
+        </LinearLayout>
+        </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

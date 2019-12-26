@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textViewLogPageTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Date, Time, Type, IP Address, Port, Message"
+        android:textAlignment="center"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/textViewLogPageTitle"
+        android:layout_gravity="center"
+        android:fadeScrollbars="false"
+        android:gravity="center"
+        android:scrollbarSize="5dp"
+        android:scrollbarThumbVertical="@color/micronetGreen"
+        android:verticalScrollbarPosition="right">
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fadeScrollbars="false"
+            android:gravity="center"
+            android:scrollbarSize="5dp"
+            android:scrollbarThumbHorizontal="@color/micronetGreen">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/textViewLogTesting"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:text=""
+                    android:textAlignment="center"
+                    android:textSize="15sp" />
+
+            </RelativeLayout>
+
+        </HorizontalScrollView>
+    </ScrollView>
+
+</RelativeLayout>

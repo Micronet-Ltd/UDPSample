@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/device_info_app_name"
+            android:textSize="12sp"/>
+
+        <TextView
+            android:id="@+id/textView22"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/device_info_copyright"
+            android:textSize="12sp"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fadeScrollbars="false"
+            android:scrollbarSize="5dp"
+            android:scrollbarThumbVertical="@color/micronetGreen">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_horizontal"
+                    android:weightSum="10">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:orientation="horizontal"
+                        android:layout_weight="3"
+                        android:weightSum="2"
+                        android:layout_marginTop="10dp">
+
+                        <TextView
+                            android:id="@+id/textView23"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/device_info_os_version"
+                            android:gravity="end"
+                            android:textSize="13dp"
+                            android:textStyle="bold"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="10dp"/>
+
+                        <TextView
+                            android:id="@+id/txtViewOSV"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:textSize="12sp"
+                            android:text="@string/config_f_unknown"
+                            android:layout_weight="1"
+                            android:layout_marginStart="10dp"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:orientation="horizontal"
+                        android:layout_weight="1"
+                        android:weightSum="2"
+                        android:layout_marginTop="0dp">
+
+                        <TextView
+                            android:id="@+id/textView24"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/device_info_android_version"
+                            android:gravity="end"
+                            android:textSize="13dp"
+                            android:textStyle="bold"
+                            android:layout_marginEnd="10dp"
+                            android:layout_weight="1"/>
+
+                        <TextView
+                            android:id="@+id/txtViewAndroidBuild"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/config_f_unknown"
+                            android:layout_weight="1"
+                            android:textSize="13dp"
+                            android:layout_marginStart="10dp"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:orientation="horizontal"
+                        android:layout_weight="1"
+                        android:weightSum="2"
+                        android:layout_marginTop="10dp">
+
+                        <TextView
+                            android:id="@+id/textView30"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/device_info_device_model"
+                            android:gravity="end"
+                            android:textSize="13dp"
+                            android:textStyle="bold"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="10dp"/>
+
+                        <TextView
+                            android:id="@+id/txtViewDeviceModel"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:textSize="13dp"
+                            android:text="@string/config_f_unknown"
+                            android:layout_weight="1"
+                            android:layout_marginStart="10dp"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:orientation="horizontal"
+                        android:layout_weight="1"
+                        android:weightSum="2"
+                        android:layout_marginTop="10dp">
+
+                        <TextView
+                            android:id="@+id/textView44"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/device_info_device_name"
+                            android:gravity="end"
+                            android:textSize="13dp"
+                            android:textStyle="bold"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="10dp"/>
+
+                        <TextView
+                            android:id="@+id/txtViewDeviceName"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:textSize="13dp"
+                            android:text="@string/config_f_unknown"
+                            android:layout_weight="1"
+                            android:layout_marginStart="10dp"/>
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:orientation="horizontal"
+                        android:layout_weight="1"
+                        android:weightSum="2"
+                        android:layout_marginTop="10dp">
+
+                        <TextView
+                            android:id="@+id/textView31"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/device_info_serial"
+                            android:gravity="end"
+                            android:textSize="13dp"
+                            android:textStyle="bold"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="10dp"/>
+
+                        <TextView
+                            android:id="@+id/txtViewSerial"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/config_f_unknown"
+                            android:layout_weight="1"
+                            android:layout_marginStart="10dp"
+                            android:textSize="13dp"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:orientation="horizontal"
+                        android:layout_weight="1"
+                        android:weightSum="2"
+                        android:layout_marginTop="10dp">
+
+                        <TextView
+                            android:id="@+id/textView32"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/device_info_app_version"
+                            android:gravity="end"
+                            android:textStyle="bold"
+                            android:layout_weight="1"
+                            android:textSize="13dp"
+                            android:layout_marginEnd="10dp"/>
+
+                        <TextView
+                            android:id="@+id/txtViewAppVersion"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/config_f_unknown"
+                            android:layout_weight="1"
+                            android:textSize="13dp"
+                            android:layout_marginStart="10dp"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:orientation="horizontal"
+                        android:layout_weight="1"
+                        android:weightSum="2"
+                        android:layout_marginTop="10dp">
+
+                        <TextView
+                            android:id="@+id/textView33"
+                            android:layout_width="0dp"
+                            android:textSize="13dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/device_info_hardware_library_version"
+                            android:gravity="end"
+                            android:textStyle="bold"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="10dp"/>
+
+                        <TextView
+                            android:id="@+id/txtViewHardwareVersion"
+                            android:layout_width="0dp"
+                            android:textSize="13dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/config_f_unknown"
+                            android:layout_weight="1"
+                            android:layout_marginStart="10dp"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:orientation="horizontal"
+                        android:layout_weight="1"
+                        android:weightSum="2"
+                        android:layout_marginTop="10dp">
+
+                        <TextView
+                            android:id="@+id/textView34"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/device_info_vehicle_bus_library_version"
+                            android:gravity="end"
+                            android:textStyle="bold"
+                            android:layout_weight="1"
+                            android:textSize="13dp"
+                            android:layout_marginEnd="10dp"/>
+
+                        <TextView
+                            android:id="@+id/txtViewCanBusVersion"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:textSize="13dp"
+                            android:text="@string/config_f_unknown"
+                            android:layout_weight="1"
+                            android:layout_marginStart="10dp"/>
+
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</LinearLayout>
