@@ -1,4 +1,5 @@
-# UDP_Sample_App_V2
+# UDP Sample Application
+
 |Product|Smart Hub/Smart Tab/Tab8|
 |-------|------------------------|
 |Project|UDP Sample Application|
