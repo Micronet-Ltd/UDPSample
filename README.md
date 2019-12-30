@@ -117,7 +117,6 @@ Following are the format of the log message:
 
 ### Date, Time, Type, Target IP, Target Port, Text Message
 
-|------------|-----------|
 |Date Format:| YYYY-MM-DD|
 |Time Format:| HH:MM:SS|
 |Type Format:| SEND -- Out-going Transmit, REVEICED -- Incoming Transmit, Fail -- Unsuccessful Transmit|
@@ -133,41 +132,20 @@ When no action detected, TX/RX TextView shows "N/A"
 
 Display UDP Transmit Record (Log Tab)
 -----
+![LOG TAB](./images/LogNoDate.PNG "LOG TAB")
+
+During user performing UDP transmit, all the transmit records will be displayed on this Tab for examination. Format of the record will be the same as the TX/RX Log.
 
 Device Besic Information (DEVICE INFO Tab)
 -----
+![DEVICE INFO TAB](./images/DeviceInfo.PNG "DEVICE INFO TAB")
+
+This Tab is showing users the basic information of the device. 
 
 Error Handling and Backup Mechanisms
 -----
 ##### KeepAlive Mechanisms
 
-##### Log Record
-
-### Application Feature
-Below are the application features of the UDP Sample App
-
-### UDP Transmit
-#### Client
-Device will perform as Client, User needs to enter designated Server IP Address, Port Number and Text Message for sending UDP transmit.
-Client will also be able to receive response from Server or other Client
-
-**Device will perform as Client. User needs to enter the designated Server IP address and Port number, then press Lock Config button on the UI
-
-#### Server
-Device will perform as Server, User needs to enter opening port for receiving UDP transmit
-
-#### 2 Parties Communication
-This is a Client to Server Communication. One device will be setup as Client, another device will be setup as Server.
-Client will send UDP transmit to Server and wait for response.
-Server will receive UDP transmit and send response to Client.
-
-#### 3 Parties Communication 
-This is a Client to Client Communication. Client One will send UDP transmit to Server, and Server will pass the packet to Client Two on the other end.
-
-#### UDP Cycle
-When UDP Cycle is on, Client will continuously sending UDP transmit to Server/ Client, user will also be able to set a time gap for each sending during cycle(From 1 second to 1 minute) 
-
-### Keep Alive Mechanism
 Keep Alive Mechanism is an approach to evaluate and maintain Internet connection of the device once the system starts UDP transmit process.
 
 Example: Server will open another listening port behind the system, it keeps receiving heartbeat UDP packet (1 byte)from client, and send an ack back to the sender.
@@ -176,142 +154,33 @@ When the number of Error Count reaches the configurable limit (Default set to 10
 
 Note: To prevent unwanted Internet Reconnection happens, any successful heartbeat communication cycle occurs during the error counting will reset the number of Error Count to 0.
 
-#### Internet Reconnection
+##### Internet Reconnection
+
 When the number of Error Count reaches the limit, system will automatically send an command to the device and force it to re-establish Internet connection by turning OFF and ON the network.
 The number of Error Count will be reset to 0 after the process.
 
 Note: Changing the Network state of the device requires System Permission. 
 
-### UDP Transmit Log Display
-When UDP Transmit processing, each sending and receiving record will be logged and displayed on the Log tabs in real-time.
-Each log contains information of:
+Example: Logcat message when KeepAlive Mechanisms working
 
-|Date|Time|Type|IP|Port|Text Message|
-|----|----|----|--|----|------------|
+![KeepAlive Mechanisms Error Counting](./images/KeepAliveCounting.PNG "KeepAlive Mechanisms Error Counting")
 
-### Write Log Into File
+KeepAlive Mechanisms is counting for error.
+
+![Internet Reconnection](./images/KeepAliveReconnection.PNG "Internet Reconnection")
+
+Error count reaches the upper limit, and Internet Reconnection got triggered
+
+##### Log Record
+
 When system starts running on device, it creates new folder called "UDP_Log" in the device storage for saving UDP transmit log.
 Each time the device perform an UDP transmit, it will also create a new csv file to store the transmit record.
 The csv file which contains transmit record will be named as Year_Month_DateTHours_Minutes_Second.csv
 
 Example: csv file named 2017_07_23T16_37_34.csv means the file was created on the date 07/23/2017 at 4pm.
 
-
-### Read Device Hardware and Software Information 
-System will extract device information
-These information included the following:
-
-|OS Version|Current Device version|
-|----------|----------------------|
-|Android Build Version|Current Android OS version|
-|Device Model|Device's production model|
-|Device Name|Device's produce name|
-|Serial|Serial number of the device|
-|App Version|Current version of the application|
-|Hardware Library Version|Not Available|
-|Vehicle Bus Library Version|Not Available|
-
-### Read Device Connectivity Information
-System will extract device's Network Connectivity information and update them on UI in real-time.
-These information included the following:
-
-|Name|Purpose|
-|----|-------|
-|Device IP|Detect device's current IP address|
-|Sim State|Detect sim card stats of the device |
-|Single Strength|Detect the current single strength of the network connectivity|
-|Internet State|Detect device Internet capability|
-|Phone Number|Extract phone number of the sim card(Only when sim card inserted)|
-|IMEI|Extract device IMEI number|
-
-
-### Future Feature
-Set up a 3rd-party server (Amazon Cloud, Google Firebase and such) for user to preform UDP transmit and UDP transmit log storage.
-
-## User Interface
-### Graphical User Interface
-The graphical user interface is tab with a standard Android header.
-
------
-
-### SERVER CONFIG Tab
-#### Vertical Layout
-![With no user input](./images/ServiceConfig.PNG "With no user input")
-#### Landscape Layout Part 1
-![With no user input](./images/ServiceConfigLand1.PNG "With no user input")
-#### Landscape Layout Part 2
-![With no user input](./images/ServiceConfigLand2.PNG "With no user input")
-
-Note: After user entered required information, and press Lock Config button. The radio buttons and edit text filed will be disable for editing, this is to prevent any changes during the UDP transmit process.
-
------
-
-### TRANSMIT ACTION Tab
-#### Vertical Layout
-![With no user input](./images/TransmitAction.PNG "With no user input")
-#### Landscape Layout
-![With no user input](./images/TransmitLand.PNG "With no user input")
-
------
-
-### LOG Tab
-#### Vertical Layout
-![With no user input](./images/LogNoDate.PNG "With no user input")
-#### Landscape Layout
-![With no user input](./images/LogNoDataLand.PNG "With no user input")
-
------
-
-### DEVICE INFO Tab
-#### Vertical Layout
-![With no user input](./images/DeviceInfo.PNG "With no user input")
-#### Landscape Layout
-![With no user input](./images/DeviceInfoLand.PNG "With no user input")
-
------
-### Application Setup
-
-#### Preparation
-Before you start, make sure the device that you'd like to setup as a Server is running on the static sim card and having a static IP.
-
-For the Clients, they can be running on any kind of cellula network or connected to the WIFI.
-
-#### Performing 2 Parties Communication
-##### Client
-At the SERVICE CONFIG Tab, select 2 parties for the Communication Type and Client for the Device Type. Enter the target server IP and designated port number, than press LOCK CONFIG.
-Once user press LOCK CONFIG, the UI elements will be locked and become unchangeable. User can press RESET CONFIG to unlock the UI elements.
-Switch to the TRABSMIT ACTION Tab, user will enter message, than press SEND or start a UDP cycle.
-The TX will display out-going UDP transmit, and RX will display the incoming UDP transmit.
-LOG Tab will produce the UDP transmit log record in real-time.
-
-##### Server
-At the SERVICE CONFIG Tab, select 2 parties for the Communication Type and Server for the Device Type. Enter the designated port number(Same as the Client), than press LOCK CONFIG,
-Once user press LOCK CONFIG, the UI elements will be locked and become unchangeable. User can press RESET CONFIG to unlock the UI elements.
-After LOCK CONFIG is pressed, the server will start listening for UDP transmit
-
-#### Performing 3 Parties Communication
-##### Client 1
-At the SERVICE CONFIG Tab, select 3 parties for the Communication Type and Client for the Device Type. Enter the target server IP and designated port number, than press LOCK CONFIG.
-Once user press LOCK CONFIG, the UI elements will be locked and become unchangeable. User can press RESET CONFIG to unlock the UI elements.
-Switch to the TRABSMIT ACTION Tab, user will enter message, than press SEND or start a UDP cycle.
-The TX will display out-going UDP transmit, and RX will display the incoming UDP transmit.
-LOG Tab will produce the UDP transmit log record in real-time.
-
-##### Client 2
-At the SERVICE CONFIG Tab, select 3 parties for the Communication Type and Client for the Device Type. Insert the target server IP and designated port number, than press LOCK CONFIG.
-Once user press LOCK CONFIG, the UI elements will be locked and become unchangeable. User can press RESET CONFIG to unlock the UI elements.
-Switch to the TRABSMIT ACTION Tab, user will enter message, than press SEND or start a UDP cycle.
-The TX will display out-going UDP transmit, and RX will display the incoming UDP transmit.
-LOG Tab will produce the UDP transmit log record in real-time.
-
-(** Note: For Client 2, please set the port number to be the Client 1 port plus 1.
-Example: If Client 1 port number is set to 7501, Client 2 port number need to be set as 7502)
-
-##### Server
-At the SERVICE CONFIG Tab, select 3 parties for the Communication Type and Server for the Device Type. Enter the designated port number(Same as the Client 1), than press LOCK CONFIG,
-Once user press LOCK CONFIG, the UI elements will be locked and become unchangeable. User can press RESET CONFIG to unlock the UI elements.
-After LOCK CONFIG is pressed, the server will start listening for UDP transmit
-
+** Note: Android OS version 5.x.x has a bug that could hide the newly created files from being seen by users.
+Users will need to reboot the device to access the log files in this case. 
 
 ### UDP Transmit Logic
 #### DatagramSocket
