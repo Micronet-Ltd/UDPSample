@@ -66,6 +66,7 @@ No matter user are performing 2 parties or 3 parties communication, when device 
 User needs to enter the port number before performing UDP transmit. For the best results, user should set the port number to be a 4 - 5 digit number within the Dynamic ports range(49152 to 65535).
 When user performing 2 parties communication, the port number for both Client and Server has to be the same.
 In the case of 3 parties communication, Client 1 port number has to be the same as Server. Client 2 port number needed to be increase by 1. 
+
 Example: In 3 parties communication, when Client 1 and Server are opening port 7500, then Client 2 needs to open the port 7501.
 
 ##### LOCK CONFIG Button
@@ -84,7 +85,7 @@ In this tab, user will be able to enter a UDP message and start performing UDP t
 This section is displaying the Server IP address from the configuration setting.
 
 ##### Target Port
-This section displays the currently opening port number for UDP transmit.
+This section displays the currently opening port that assigned by user from the configuration setting.
 
 ##### Connection
 This section displays the current Internet connectivity status.
@@ -96,15 +97,19 @@ Connectivity status will be updating in real-time, if it shows OFFLINE, please c
 ##### Message
 When device set to be Client, user can enter a text message here for UDP transmit. This message will be send over to Server or other Clients, depends on the communication type.
 
+Users can basically enter any kind of text message here, including word, number, and symbol. For the best results. please keep the size of the text message within 3000 bytes.
+
+** Note: UDP message byte size is configurable, default is set to be 3000 in the source code. Increasing the byte size might result in transmit failure or packet loss.
+
 ##### Time Interval SeekBar
-When user performing UDP Cycle, they can set the time interval between each transmit, from every 1 second to every 1 minute.
+When users performing UDP Cycle, they can set the time interval between each transmit, from every 1 second to every 1 minute.
 default is set to be 1 second.
 
 ##### UDP Cycle Toggle Button
-After user insert the text message and time interval, pressing the toggle button will start the UDP Cycle. Pressing the toggle button again during UDP cycle will stop the process.
+After user insert the text message and time interval, pressing the toggle button will start UDP Cycle. Pressing the toggle button again during UDP cycle will stop the process.
 
 ##### UDP Send Button
-Press this Send button will perform UDP transmit and sending one packet to the target.
+Press this Send button will perform UDP transmit and sending one packet to the target per pressed.
 
 ##### TX
 This section will display the current out-going UDP transmit
