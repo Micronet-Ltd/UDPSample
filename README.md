@@ -75,6 +75,9 @@ Once user finishing the configuration setup, press the LOCK CONFIG button to sec
 ##### RESET CONFIG
 Passing this button will remove all the user inputs and makes the configuration section available to editing.
 
+##### Network State
+This section displays the Network Connectivity State of the device.
+
 Performing UDP Transmit (Transmit Action Tab) 
 -----
 In this tab, user will be able to enter a UDP message and start performing UDP transmit.
