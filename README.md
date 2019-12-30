@@ -6,14 +6,15 @@
 |Project Name|UDP Sample Application|
 |Aim/Objective|An Android sample application that demostrates how the UDP transmit feature could be implemented on Micronet's computing platforms - SmartHub, SmarTab, SmartCam, and SmarTab8|
 |Current Application Version| v1.0.0|
-|Document Revision Number|02|
-|Document Revision Date| 26 December 2019|
+|Document Revision Number|03|
+|Document Revision Date| 30 December 2019|
 
 ## Document History
 |Document Revision|Written By|Date|Comments|
 |-----------------|----------|----|--------|
 |01|John Ho|19 December 2019|Draft|
 |02|Eemaan Siddiqi|26 December 2019|Minor changes|
+|03|John Ho|30 December 2019|Changes made|
 
 ## Preface
 ### Document Purpose
@@ -31,7 +32,7 @@ Using the sample application, users could configure the device to act as a Clien
 |Tested OS|Tab8: msm8953_64_c801-userdebug 9 PKQ1/ SmartHub: TREQr_5_0.1.27.0_20190926.1451/ SmartTab: msm8953_64_c801-userdebug 9 PKQ1 micronet.MSTab8_00.2.7.0_20191119.0959 release-keys/ SmartCam: msm8953_64_c801-userdebug 9 PKQ1 micronet.MSCAM_10.2.7.0_20191118.1459 release-keys|
 |Require Platform Keys and Properties|micronet-tab8-platform.keystore/ obc5_props.keystore/ obc5keys.properties/ tab8platformkey.properties|
 
-### Application Feature and UI Instruction
+## Application Feature and UI Instruction
 Below are the application features and UI Instruction of the UDP Sample Application
 
 Configuring a UDP Communication Channel (SERVICE CONFIG TAB)
@@ -95,7 +96,7 @@ Connectivity status will be updating in real-time, if it shows OFFLINE, please c
 ##### Message
 When device set to be Client, user can enter a text message here for UDP transmit. This message will be send over to Server or other Clients, depends on the communication type.
 
-##### Time Gap SeekBar
+##### Time Interval SeekBar
 When user performing UDP Cycle, they can set the time interval between each transmit, from every 1 second to every 1 minute.
 default is set to be 1 second.
 
@@ -115,11 +116,13 @@ This section will display the current incoming UDP transmit
 When user performs any UDP transmit action, system displays a log message at the TX or RX TextView for the results of the action. 
 Following are the format of the log message:
 
-### Date, Time, Type, Target IP, Target Port, Text Message
+###### Date, Time, Type, Target IP, Target Port, Text Message
 
-|Date Format:| YYYY-MM-DD|
-|Time Format:| HH:MM:SS|
-|Type Format:| SEND -- Out-going Transmit, REVEICED -- Incoming Transmit, Fail -- Unsuccessful Transmit|
+|Attributes|Information|
+|----------|-----------|
+|Date:| YYYY-MM-DD|
+|Time:| HH:MM:SS|
+|Type:| SEND -- Out-going Transmit, REVEICED -- Incoming Transmit, Fail -- Unsuccessful Transmit|
 |Target IP:| IPv4 Standard|
 |Target Port:| 4 - 5 Digit Number|
 |Text Message:| User Custom Text Message|
@@ -174,6 +177,9 @@ Error count reaches the upper limit, and Internet Reconnection got triggered
 ##### Log Record
 
 When system starts running on device, it creates new folder called "UDP_Log" in the device storage for saving UDP transmit log.
+
+Location: Internal storage\Android\data\com.micronet.udpsampleappv2\files\Documents\UDP_LOG
+
 Each time the device perform an UDP transmit, it will also create a new csv file to store the transmit record.
 The csv file which contains transmit record will be named as Year_Month_DateTHours_Minutes_Second.csv
 
@@ -194,15 +200,32 @@ Note: Base on different needs, the setup for DatagramSocket and DatagramPack cou
 
 Example of DatagramSocket on Server side:
 
+When creating DatagramSocket on the Server side, we need to specify the communicating port number for the socket on the creation stage. Server's DatagramSocket will focus on the designate port and monitoring the UDP traffic. 
+
 ```java
   try{
-      DatagramSocket datagramsocket = new DatagramSocket(portNumner);
+      DatagramSocket datagramSocket = new DatagramSocket(portNumner);
       DatagramPacket datagramPacket = new DatagramPacket(receiveData, receiveData.length)
       datagramSocket.receive(datagramPacket);
   }catch(Exception e){
   
   }
 
+```
+
+
+Example of DatagramSocket on Client side:
+
+On the other hand, DatagramSocket on the Client side do not need to speify the port number on the creation stage.
+Target port number will be stored in the DatagramPacket.
+```java
+  try{
+      DatagramSocket datagramSocket = new DatagramSocket();
+      DatagramPacket datagramPacket = new DatagramPacket(sendData, sendData.length, targetIP, targetPort);
+      datagramSocket.send(datagramPacket);
+    }catch(Exception e){
+
+    }
 ```
 
 DatagramSocket: https://developer.android.com/reference/java/net/DatagramSocket
