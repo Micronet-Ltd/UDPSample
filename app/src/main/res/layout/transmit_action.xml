@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fadeScrollbars="false"
+        android:scrollbarSize="5dp"
+        android:scrollbarThumbVertical="@color/micronetGreen">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="10">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="3"
+            android:layout_marginEnd="5dp">
+
+            <TextView
+                android:id="@+id/textView19"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/config_f_target_ip"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:gravity="end"/>
+
+            <TextView
+                android:id="@+id/textView20"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/config_f_target_port"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:gravity="end"/>
+
+            <!--<TextView
+                android:id="@+id/textView21"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/config_f_message"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:gravity="end"/>-->
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="3.5">
+
+            <TextView
+                android:id="@+id/textViewActionTargetIP"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/config_f_unknown"
+                android:textSize="15sp"
+                android:layout_marginTop="10dp"
+                android:gravity="start"/>
+
+            <TextView
+                android:id="@+id/textViewActionTargetPort"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/config_f_unknown"
+                android:textSize="15sp"
+                android:layout_marginTop="10dp"
+                android:gravity="start"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3.5"
+            android:orientation="vertical"
+            android:weightSum="2"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/textView45"
+                android:text="Connection"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:layout_marginTop="10dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/textViewTransmitActionConnection"
+                android:text="Connection"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:layout_marginTop="10dp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="10"
+                android:layout_marginTop="5dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:id="@+id/textView43"
+                    android:text="Message:"
+                    android:layout_marginStart="15dp"
+                    android:textStyle="bold"
+                    android:textSize="14sp"/>
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="8"
+                    android:layout_marginEnd="15dp"
+                    android:id="@+id/editTextInputMessage"
+                    android:hint="Please Enter Message"/>
+
+            </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="15dp"
+        android:weightSum="3">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView42"
+            android:layout_marginTop="5dp"
+            android:text="Please select a time gap for UDP cycle"
+            android:textAllCaps="true"
+            android:textAlignment="center"
+            android:textSize="12sp"
+            android:textStyle="bold"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textViewCycleTime"
+                android:text="@string/transmit_action_f_cycle_time_second"
+                android:textSize="15sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView27"
+                android:text="@string/transmit_action_f_cycle_time_unit"
+                android:textSize="15sp"
+                android:textStyle="bold"/>
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="6"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="1 Sec"
+                    android:textAlignment="center"
+                    android:id="@+id/textView40"
+                    android:textStyle="bold"/>
+
+                <SeekBar
+                    android:id="@+id/seekBarTimer"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:max="60000"
+                    android:layout_weight="4"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="60 Sec"
+                    android:textAlignment="center"
+                    android:id="@+id/textView41"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:weightSum="4">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView26"
+                    android:text="@string/transmit_action_f_send_cycle"
+                    android:layout_weight="3"
+                    android:layout_marginStart="15dp"
+                    android:textStyle="bold"
+                    android:textSize="15dp"/>
+                <ToggleButton
+                    android:id="@+id/toggleButtonCycle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="ToggleButton"
+                    android:layout_marginEnd="15dp"
+                    android:layout_weight="1"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="15dp"
+                android:weightSum="4">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:text="@string/transmit_action_f_send_once_title"
+                    android:layout_weight="3"
+                    android:layout_marginStart="15dp"/>
+
+                <Button
+                    android:id="@+id/btnSendUDP"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/transmit_action_f_send_once_button"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="15dp"/>
+            </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:weightSum="10">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="5"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView28"
+                android:text="TX"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/textViewTransmitTX"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/config_f_unknown"
+                android:layout_marginTop="15dp"
+                android:textSize="12sp"
+                android:textAlignment="center"
+                android:textColor="@color/micronetGreen"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="5"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView29"
+                android:text="RX"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/textViewTransmitRX"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/config_f_unknown"
+                android:layout_marginTop="15dp"
+                android:textSize="12sp"
+                android:textAlignment="center"
+                android:textColor="@color/micronetBlueDark"/>
+
+        </LinearLayout>
+    </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
