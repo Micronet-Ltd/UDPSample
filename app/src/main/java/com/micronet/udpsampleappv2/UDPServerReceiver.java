@@ -123,10 +123,14 @@ public class UDPServerReceiver {
                         int clientOnePort = receivePacket.getPort();
                         Log.d(TAG, "Received from Client 1 -- Message: " + receivedMsgOne + " /IP: " + clientOneIP + " /Port: " + clientOnePort);
 
-                        byte[] sendData = receiveMsgTwo.getBytes();
-                        DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, clientOneIP, clientOnePort);
-                        datagramSocket1.send(sendPacket);
-                        Log.d(TAG, "Send Client2 message to Client1 : Message: " + receiveMsgTwo);
+                        if(receiveMsgTwo != ""){
+                            byte[] sendData = receiveMsgTwo.getBytes();
+                            DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, clientOneIP, clientOnePort);
+                            datagramSocket1.send(sendPacket);
+                            Log.d(TAG, "Send Client2 message to Client1 : Message: " + receiveMsgTwo);
+                        }else{
+                            Log.d(TAG, "No response was found");
+                        }
 
                     } catch (Exception e) {
                         Log.d(TAG, "Client receiver ONE error" + e);
@@ -191,11 +195,14 @@ public class UDPServerReceiver {
 
                         Log.d(TAG, "Received from Client 2 -- Message: " + receiveMsgTwo + " /IP: " + clientTwoIP + " /Port: " + clientTwoPort);
 
-                        byte[] sendData = receivedMsgOne.getBytes();
-                        DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, clientTwoIP, clientTwoPort);
-                        datagramSocket2.send(sendPacket);
-                        Log.d(TAG, "Send Client1 message to Client2 : Message: " + receivedMsgOne);
-
+                        if(receivedMsgOne != "") {
+                            byte[] sendData = receivedMsgOne.getBytes();
+                            DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, clientTwoIP, clientTwoPort);
+                            datagramSocket2.send(sendPacket);
+                            Log.d(TAG, "Send Client1 message to Client2 : Message: " + receivedMsgOne);
+                        }else{
+                            Log.d(TAG, "No response was found");
+                        }
                     } catch (Exception e) {
                         Log.d(TAG, "Client Receiver TWO Error: " + e);
                     }
